@@ -1,0 +1,8 @@
+@import "tailwindcss";
+html {
+  background-color: #FFFBF4; /* cream */
+}
+
+html.dark {
+  background-color: #11120D; /* base */
+}
