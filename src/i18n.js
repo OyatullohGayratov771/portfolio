@@ -25,7 +25,7 @@ const resources = {
       },
       contact: {
         title: "Bog‘lanish",
-        desc: "Savol, loyiha yoki hamkorlik taklifi bo‘lsa — yozing. Javobni o‘zimdan olasiz.",
+        desc: "Savol, loyiha yoki hamkorlik taklifi bo‘lsa — yozing. Javobni o‘zimdan olasiz.(ishlamidi)",
         name: "Ismingiz",
         email: "Email",
         message: "Xabar...",
@@ -62,7 +62,7 @@ const resources = {
       },
       contact: {
         title: "Let's Connect",
-        desc: "If you have ideas, projects, or collaboration offers — feel free to reach out.",
+        desc: "If you have ideas, projects, or collaboration offers — feel free to reach out.(doesn't work)",
         name: "Your Name",
         email: "Email",
         message: "Message...",
@@ -99,7 +99,7 @@ const resources = {
       },
       contact: {
         title: "Свяжитесь со мной",
-        desc: "Если у вас есть идеи, проекты или предложения о сотрудничестве — свяжитесь со мной.",
+        desc: "Если у вас есть идеи, проекты или предложения о сотрудничестве — свяжитесь со мной.(не работает)",
         name: "Ваше имя",
         email: "Email",
         message: "Сообщение...",
