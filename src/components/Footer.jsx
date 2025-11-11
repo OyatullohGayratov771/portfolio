@@ -1,40 +1,45 @@
+import { useTranslation } from "react-i18next";
 import { FaGithub, FaTelegramPlane, FaEnvelope } from "react-icons/fa";
 
 export default function Footer() {
-  return (
-      <footer className="py-12 px-6 bg-cream dark:bg-base text-muted dark:text-sand border-t border-muted/30 dark:border-sand/20 transition-colors duration-300">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+  const { t } = useTranslation();
 
+  return (
+    <footer className="py-12 px-6 bg-cream text-base border-t border-sand/40">
+      <div 
+        data-aos="fade-in" 
+        data-aos-delay="200" 
+        className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6"
+      >
         {/* Brand */}
-        <h3 className="text-lg font-semibold text-base dark:text-cream tracking-wide">
-          Goyatulloh
+        <h3 className="text-lg font-semibold tracking-wide text-base">
+          gayratov oyatulloh
         </h3>
 
-        {/* Navigation */}
-        <nav className="flex gap-8 text-sm text-muted dark:text-sand">
-          <a href="#about" className="hover:text-base dark:hover:text-cream transition">About</a>
-          <a href="#projects" className="hover:text-base dark:hover:text-cream transition">Projects</a>
-          <a href="#contact" className="hover:text-base dark:hover:text-cream transition">Contact</a>
-        </nav>
+        {/* Links */}
+        <div className="flex gap-8 text-sm text-muted">
+          <a href="#about" className="hover:text-base transition">{t("footer.about")}</a>
+          <a href="#projects" className="hover:text-base transition">{t("footer.projects")}</a>
+          <a href="#contact" className="hover:text-base transition">{t("footer.contact")}</a>
+        </div>
 
         {/* Social */}
-        <div className="flex items-center gap-6 text-xl text-muted dark:text-sand">
-          <a href="https://github.com" target="_blank" className="hover:text-base dark:hover:text-cream transition">
+        <div className="flex items-center gap-6 text-xl text-muted">
+          <a href="https://github.com/OyatullohGayratov771" target="_blank" className="hover:text-base transition">
             <FaGithub />
           </a>
-          <a href="https://t.me" target="_blank" className="hover:text-base dark:hover:text-cream transition">
+          <a href="https://t.me/x_azamat_x" target="_blank" className="hover:text-base transition">
             <FaTelegramPlane />
           </a>
-          <a href="mailto:example@gmail.com" className="hover:text-base dark:hover:text-cream transition">
+          <a href="mailto:azamatgayratov771@gmail.com" className="hover:text-base transition">
             <FaEnvelope />
           </a>
         </div>
-
       </div>
 
       {/* Bottom note */}
-      <div className="text-center text-xs text-muted dark:text-sand mt-10">
-        © {new Date().getFullYear()} Goyatulloh — Crafted with intention.
+      <div className="text-center text-xs text-muted mt-10">
+        © {new Date().getFullYear()} Goyatulloh — {t("footer.note")}
       </div>
     </footer>
   );

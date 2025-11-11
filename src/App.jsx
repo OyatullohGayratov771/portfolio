@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -8,31 +8,19 @@ import Footer from "./components/Footer";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-
 export default function App() {
-  const [theme, setTheme] = useState(
-    localStorage.getItem("theme") || "dark"
-  );
-  
   useEffect(() => {
     AOS.init({
-      duration: 800, // animatsiya davomiyligi
-      easing: "ease-out", // yumshoq animatsiya
-      once: true, // faqat 1 marta animatsiya qilinadi
-    });
+  duration: 700,
+  easing: "cubic-bezier(0.16, 1, 0.3, 1)",
+  once: true,
+  offset: 80,
+});
   }, []);
-  useEffect(() => {
-    if (theme === "dark") {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-    localStorage.setItem("theme", theme);
-  }, [theme]);
 
   return (
-    <div className={theme}>
-      <Header theme={theme} setTheme={setTheme} />
+    <div className="bg-cream text-base">
+      <Header />
       <Hero />
       <About />
       <Projects />

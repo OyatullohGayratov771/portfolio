@@ -1,27 +1,36 @@
-export default function Hero() {
-  return (
-    <section className="min-h-[100svh] flex items-center justify-center px-6 bg-cream dark:bg-base text-base dark:text-cream transition-colors duration-300">
-      <div className="max-w-2xl text-center select-none">
+import { useTranslation } from "react-i18next";
 
+export default function Hero() {
+  const { t } = useTranslation();
+
+  return (
+    <section className="min-h-[100svh] flex items-center justify-center px-6 bg-cream text-base">
+      <div data-aos="fade-up" className="max-w-2xl text-center select-none">
+
+        {/* Name */}
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold leading-tight">
-          Gayratov <span className="text-muted dark:text-sand">Oyatulloh</span>
+          <span className="text-base-text">{t("hero.title").split(" ")[0]}</span>{" "}
+          <span className="text-muted">{t("hero.title").split(" ")[1]}</span>
         </h1>
 
-        <p className="text-muted dark:text-sand mt-4 text-lg sm:text-xl">
-          Frontend Developer · Clean Interfaces & Clear Logic
+        {/* Role */}
+        <p className="mt-4 text-muted sm:text-lg">
+          {t("hero.role")}
         </p>
 
-        <div className="mt-8">
-          <a
-            href="#projects"
-            className="px-8 py-3 rounded-full border border-muted dark:border-sand
-            hover:bg-base hover:text-cream dark:hover:bg-cream dark:hover:text-base
-            transition-all duration-300 inline-block"
-          >
-            View Projects
-          </a>
-        </div>
+        {/* Subtitle */}
+        <p className="mt-2 text-muted/80 sm:text-base">
+          {t("hero.subtitle")}
+        </p>
 
+        {/* CTA */}
+        <a
+          href="#projects"
+          className="inline-block mt-10 px-8 py-3 rounded-full border border-accent text-accent
+          hover:bg-accent hover:text-cream transition-all duration-300 hover:-translate-y-[2px]"
+        >
+          {t("hero.cta")}
+        </a>
       </div>
     </section>
   );

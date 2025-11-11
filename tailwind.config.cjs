@@ -1,6 +1,5 @@
-module.exports = {
-  darkMode: "class",
-  content: ["./index.html", "./src/**/*.{js,jsx,ts,tsx}"],
+export default {
+  content: ["./index.html", "./src/**/*.{js,jsx}"],
   theme: {
     extend: {
       colors: {
@@ -8,6 +7,7 @@ module.exports = {
         muted: "#565449",
         sand: "#D8CFBC",
         cream: "#FFFBF4",
+        accent: "#C57A5A",
       },
     },
   },

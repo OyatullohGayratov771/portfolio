@@ -1,8 +1,8 @@
 @import "tailwindcss";
-html {
-  background-color: #FFFBF4; /* cream */
-}
 
-html.dark {
-  background-color: #11120D; /* base */
+html, body {
+  background-color: #FFFBF4;
+  color: #11120D;
+  font-family: 'Inter', sans-serif;
+  scroll-behavior: smooth;
 }
