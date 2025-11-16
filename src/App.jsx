@@ -1,31 +1,33 @@
-import { useEffect } from "react";
-import Header from "./components/Header";
-import Hero from "./components/Hero";
-import About from "./components/About";
-import Projects from "./components/Projects";
-import Contact from "./components/Contact";
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import Layout from "./components/Layout";
+
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Projects from "./pages/Projects";
+import Businesses from "./pages/Businesses";
+import Channels from "./pages/Channels";
+import Notes from "./pages/Notes";
+import Contact from "./pages/Contact";
 
 export default function App() {
-  useEffect(() => {
-    AOS.init({
-  duration: 700,
-  easing: "cubic-bezier(0.16, 1, 0.3, 1)",
-  once: true,
-  offset: 80,
-});
-  }, []);
-
   return (
-    <div className="bg-cream text-base">
-      <Header />
-      <Hero />
-      <About />
-      <Projects />
-      <Contact />
-      <Footer />
-    </div>
+      <div className="min-h-screen bg-base-light text-text-primary dark:bg-[#0B0B0B] dark:text-neutral-100 transition-colors duration-300">
+        <Navbar />
+        <main className="max-w-6xl mx-auto px-6 py-12">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/businesses" element={<Businesses />} />
+            <Route path="/channels" element={<Channels />} />
+            <Route path="/notes" element={<Notes />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </main>
+        
+        <Footer />
+      </div>
   );
 }
