@@ -8,7 +8,7 @@ export default function Navbar() {
   return (
     <header 
       className="sticky top-0 z-50 backdrop-blur-md 
-      bg-white/70 dark:bg-[#0B0B0B]/70 
+      bg-white/70 dark:bg-[#000000]/70 
       border-b border-neutral-200 dark:border-neutral-800
       transition-all duration-300"
     >

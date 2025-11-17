@@ -13,7 +13,7 @@ import Contact from "./pages/Contact";
 
 export default function App() {
   return (
-      <div className="min-h-screen bg-base-light text-text-primary dark:bg-[#0B0B0B] dark:text-neutral-100 transition-colors duration-300">
+      <div className="min-h-screen bg-base-light text-text-primary dark:bg-[#000000] dark:text-neutral-100 transition-colors duration-300">
         <Navbar />
         <main className="max-w-6xl mx-auto px-6 py-12">
           <Routes>

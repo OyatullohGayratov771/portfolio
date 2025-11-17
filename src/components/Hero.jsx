@@ -149,13 +149,26 @@ export default function Hero() {
             </div>
           </motion.div>
 
-          {/* Torn paper strip as accent */}
-          <img
-            src="/torn-strip.png"
-            alt=""
-            aria-hidden="true"
-            className="w-full opacity-70 rotate-[-1deg] dark:opacity-40 pointer-events-none"
-          />
+          {/* Torn strip with slogan */}
+          <div className="relative w-full rotate-[-1deg]">
+            <img
+              src="/torn-strip.png"
+              alt=""
+              aria-hidden="true"
+              className="w-full opacity-70 dark:opacity-40 pointer-events-none"
+            />
+
+            <p
+              className="absolute inset-0 flex items-center justify-center
+              text-[10px] sm:text-xs md:text-sm lg:text-base
+              uppercase font-black tracking-widest
+              text-black dark:text-white
+              rotate-[1deg] pointer-events-none"
+            >
+              No Perfect Lines. Only Real Work.uuuu 
+            </p>
+          </div>
+
         </div>
       </div>
 
