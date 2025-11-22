@@ -14,42 +14,43 @@ export default function Hero() {
     show: { opacity: 1, scale: 1, transition: { duration: 0.6 } },
   };
 
-  const hoverTransform = { scale: 1.02, rotate: -2 };
-
   return (
     <section
       aria-labelledby="hero-title"
-      className="relative pt-20 md:pt-32 pb-24 overflow-hidden
+      className="relative pt-16 sm:pt-20 md:pt-32 pb-16 sm:pb-20 md:pb-28 overflow-hidden
       bg-neutral-100 dark:bg-black text-black dark:text-white"
     >
-      {/* subtle noise / texture (decorative) */}
+      {/* Texture */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 opacity-20 pointer-events-none bg-[url('/noise.png')] mix-blend-multiply"
+        className="absolute inset-0 bg-[url('/noise.png')] opacity-20 mix-blend-multiply pointer-events-none"
       />
 
-      <div className="max-w-6xl mx-auto px-6 grid grid-cols-12 gap-8 md:gap-10 relative">
-        {/* LEFT — TEXT (z-index on top so torn layers overlay correctly) */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-12 gap-6 md:gap-10 relative">
+
+        {/* LEFT SIDE */}
         <div className="col-span-12 md:col-span-7 flex flex-col z-20">
-          {/* Collage Title with a torn-paper background layer (decorative) */}
+
+          {/* TITLE */}
           <motion.div
             initial={shouldReduceMotion ? "show" : "hidden"}
             animate="show"
             variants={titleVariants}
-            className="relative mb-2"
+            className="relative mb-3"
           >
-            {/* Decorative torn-paper layer (hidden on very small screens) */}
             <img
               src="/torn-paper.png"
               alt=""
               aria-hidden="true"
-              className="absolute -top-6 -left-6 w-[140%] opacity-60 dark:opacity-40 rotate-[-2deg] pointer-events-none hidden sm:block"
+              className="absolute -top-6 -left-4 w-[135%] opacity-60 dark:opacity-40 
+              rotate-[-2deg] pointer-events-none hidden sm:block select-none"
             />
 
             <h1
               id="hero-title"
-              className="relative text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black uppercase
-              leading-[0.95] tracking-tight z-10"
+              className="relative font-black uppercase z-10 
+              leading-[0.9] tracking-tight select-none
+              text-[2.3rem] sm:text-[3.1rem] md:text-[4.6rem] lg:text-[5.2rem]"
             >
               Azamat
               <br />
@@ -59,58 +60,66 @@ export default function Hero() {
             </h1>
           </motion.div>
 
-          {/* Subline on small torn paper (decorative) */}
+          {/* SUBLINE */}
           <motion.div
             initial={shouldReduceMotion ? "show" : "hidden"}
             animate="show"
             variants={titleVariants}
             transition={{ delay: 0.15 }}
-            className="relative inline-block mt-4"
+            className="relative inline-block mt-3 sm:mt-4"
           >
             <img
               src="/torn-paper-small.png"
               alt=""
               aria-hidden="true"
-              className="absolute -top-1 -left-2 w-[115%] opacity-60 dark:opacity-40 rotate-[1deg] pointer-events-none hidden xs:block"
+              className="absolute -top-1 -left-2 w-[115%] opacity-60 dark:opacity-40 rotate-[1deg] hidden xs:block select-none"
             />
-            <p className="relative text-base sm:text-lg font-semibold max-w-lg">
+
+            <p className="relative text-sm sm:text-base md:text-lg font-semibold max-w-lg leading-snug">
               Developer / Designer / Entrepreneur — making bold, handcrafted web experiences.
             </p>
           </motion.div>
 
-          {/* CTA group */}
-          <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-4">
-            {/* Tape-decorated primary CTA */}
+          {/* CTA BUTTONS */}
+          <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4">
+            {/* PRIMARY CTA */}
             <motion.div
-              whileHover={shouldReduceMotion ? {} : hoverTransform}
+              whileHover={shouldReduceMotion ? {} : { scale: 1.03, rotate: -2 }}
               className="relative inline-block"
             >
               <img
                 src="/tape.png"
                 alt=""
                 aria-hidden="true"
-                className="absolute -top-3 left-0 w-20 opacity-80 pointer-events-none rotate-[6deg] hidden sm:block"
+                className="absolute -top-3 left-0 w-20 opacity-80 rotate-[6deg] hidden sm:block select-none"
               />
 
               <Link
                 to="/projects"
-                className="relative px-6 sm:px-8 py-3 bg-white dark:bg-black border-4 border-black dark:border-white
-                       text-black dark:text-white uppercase font-bold text-sm shadow-[6px_6px_0px_0px_black] dark:shadow-[6px_6px_0px_0px_white]
-                       rotate-[-1deg] inline-block transition-transform"
-                aria-label="View my work"
+                className="relative w-full sm:w-auto text-center
+                px-6 sm:px-8 py-2.5 sm:py-3
+                bg-white dark:bg-black border-3 sm:border-4 border-black dark:border-white
+                text-black dark:text-white uppercase font-bold text-xs sm:text-sm
+                shadow-[4px_4px_0px_black] dark:shadow-[4px_4px_0px_white]
+                -rotate-1 inline-block transition-transform"
               >
                 View Work
               </Link>
             </motion.div>
 
-            {/* Secondary CTA */}
-            <motion.div whileHover={shouldReduceMotion ? {} : { rotate: 2, scale: 1.02 }}>
+            {/* SECONDARY CTA */}
+            <motion.div
+              whileHover={shouldReduceMotion ? {} : { rotate: 2, scale: 1.02 }}
+            >
               <Link
                 to="/contact"
-                className="px-6 sm:px-8 py-3 bg-black dark:bg-white text-white dark:text-black border-4 border-black dark:border-white
-                       uppercase font-bold text-sm shadow-[6px_6px_0px_0px_black] dark:shadow-[6px_6px_0px_0px_white]
-                       rotate-[1deg] inline-block transition-transform"
-                aria-label="Contact me"
+                className="w-full sm:w-auto text-center
+                px-6 sm:px-8 py-2.5 sm:py-3
+                bg-black dark:bg:white text-white dark:text-black
+                border-3 sm:border-4 border-black dark:border-white
+                uppercase font-bold text-xs sm:text-sm
+                shadow-[4px_4px_0px_black] dark:shadow-[4px_4px_0px_white]
+                rotate-[1deg] inline-block transition-transform"
               >
                 Contact Me
               </Link>
@@ -118,64 +127,63 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* RIGHT — COLLAGE IMAGE column */}
-        <div className="col-span-12 md:col-span-5 flex flex-col gap-6 relative z-10">
+        {/* RIGHT SIDE IMAGE */}
+        <div className="col-span-12 md:col-span-5 flex flex-col gap-4 sm:gap-6 relative z-10 mt-6 md:mt-0">
+
+          {/* Portrait */}
           <motion.div
             initial={shouldReduceMotion ? "show" : "hidden"}
             animate="show"
             variants={blockVariants}
             transition={{ delay: 0.1 }}
-            className="relative border-4 border-black dark:border-white rotate-[2deg] overflow-hidden"
+            className="relative border-3 sm:border-4 border-black dark:border-white
+            rotate-[1.5deg] overflow-hidden 
+            shadow-[4px_4px_0px_black] dark:shadow-[4px_4px_0px_white]
+            will-change-transform"
           >
-            {/* Use <picture> for a modern fallback (webp if available) and lazy loading */}
             <picture>
-              <source srcSet="/azamat.webp" type="image/webp" />
+              <source src="/azamat.webp" type="image/webp" />
               <img
                 src="/azamat.jpg"
                 alt="Azamat portrait"
+                className="w-full h-56 sm:h-72 md:h-80 lg:h-96 object-cover grayscale contrast-125"
                 loading="lazy"
-                className="w-full h-72 sm:h-96 object-cover grayscale contrast-125"
-                style={{ objectPosition: "center top" }}
               />
             </picture>
 
-            {/* yellow label (slightly rotated) */}
             <div
-              className="absolute bottom-0 left-0 bg-[#FFEA00] text-black px-4 py-2
-              border-t-4 border-r-4 border-black dark:border-white font-bold uppercase text-xs rotate-[-2deg]"
-              aria-hidden="true"
+              className="absolute bottom-0 left-0 bg-[#FFEA00] text-black px-3 sm:px-4 py-1.5 sm:py-2
+              border-t-3 sm:border-t-4 border-r-3 sm:border-r-4 border-black dark:border-white 
+              font-bold uppercase text-[10px] sm:text-xs -rotate-2"
             >
               Creator & Hacker Spirit
             </div>
           </motion.div>
 
-          {/* Torn strip with slogan */}
-          <div className="relative w-full rotate-[-1deg]">
+          {/* Torn Strip Slogan */}
+          <div className="relative w-full -rotate-1">
             <img
               src="/torn-strip.png"
               alt=""
-              aria-hidden="true"
-              className="w-full opacity-70 dark:opacity-40 pointer-events-none"
+              className="w-full opacity-70 dark:opacity-40 pointer-events-none select-none"
             />
 
             <p
               className="absolute inset-0 flex items-center justify-center
-              text-[10px] sm:text-xs md:text-sm lg:text-base
+              text-[9px] xs:text-[10px] sm:text-xs md:text-sm 
               uppercase font-black tracking-widest
-              text-black dark:text-white
-              rotate-[1deg] pointer-events-none"
+              text-black dark:text-white pointer-events-none rotate-[0.6deg]"
             >
-              No Perfect Lines. Only Real Work.uuuu 
+              No Perfect Lines. Only Real Work.
             </p>
           </div>
-
         </div>
       </div>
 
-      {/* Decorative vertical "Portfolio" text — desktop only */}
+      {/* Vertical decorative text */}
       <span
         aria-hidden="true"
-        className="hidden md:block absolute top-16 right-[-30px] rotate-90 font-black text-5xl uppercase tracking-tight opacity-30"
+        className="hidden md:block absolute top-16 right-[-30px] rotate-90 font-black text-4xl md:text-5xl uppercase opacity-25 tracking-tight"
       >
         Portfolio
       </span>

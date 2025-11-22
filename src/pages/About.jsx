@@ -95,7 +95,7 @@ export default function About() {
             />
 
             <img
-              src="/azamat.webp"
+              src="/azamat2.jpg"
               alt="Azamat portrait"
               className="border-4 border-black dark:border-white grayscale contrast-[1.3] shadow-[6px_6px_0px_black] dark:shadow-[6px_6px_0px_white]"
             />

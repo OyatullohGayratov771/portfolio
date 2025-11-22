@@ -9,6 +9,7 @@ export function FeaturedProjects() {
       image: "/project1.jpg",
       link: "/projects/goyatulloh",
       rotate: "-2deg",
+      rotateClass: "md:-rotate-2",
     },
     {
       title: "Manimal Store",
@@ -17,34 +18,44 @@ export function FeaturedProjects() {
       image: "/project2.jpg",
       link: "/projects/manimal",
       rotate: "2deg",
+      rotateClass: "md:rotate-2",
     },
   ];
 
   return (
-    <section className="mt-24">
-      <h2 className="text-3xl md:text-5xl font-black uppercase mb-10">
+    <section className="mt-16 sm:mt-20">
+      <h2 className="text-2xl sm:text-3xl md:text-5xl font-black uppercase mb-6 sm:mb-10">
         Featured Projects
       </h2>
 
-      <div className="grid grid-cols-12 gap-10">
+      <div className="grid grid-cols-12 gap-6 sm:gap-8">
         {items.map((p, i) => (
           <div
             key={i}
-            className="col-span-12 md:col-span-6 relative transition-transform hover:scale-[1.01]"
-            style={{ transform: `rotate(${p.rotate})` }}
+            className={`col-span-12 md:col-span-6 relative transition-transform hover:scale-[1.01] ${p.rotateClass}`}
           >
             {/* Torn background (collage layer) */}
             <img
               src="/torn-paper.png"
               aria-hidden="true"
-              className="absolute -top-6 -left-6 w-[120%] opacity-50 dark:opacity-30 pointer-events-none"
+              className="absolute -top-4 -left-3 w-[110%] sm:w-[120%] opacity-40 dark:opacity-30
+              pointer-events-none hidden sm:block"
             />
 
             {/* Card */}
-            <div className="relative border-4 border-black dark:border-white bg-white dark:bg-black p-5 shadow-[6px_6px_0px_0px_black] dark:shadow-[6px_6px_0px_0px_white]">
-              
+            <div
+              className="relative border-[3px] sm:border-4 border-black dark:border-white
+              bg-white dark:bg-black
+              p-4 sm:p-5
+              shadow-[4px_4px_0px_0px_black] dark:shadow-[4px_4px_0px_0px_white]"
+            >
               {/* Tag */}
-              <span className="inline-block bg-[#FFEA00] text-black px-3 py-1 text-xs font-black uppercase border-2 border-black dark:border-white rotate-[-1deg]">
+              <span
+                className="inline-block bg-[#FFEA00] text-black
+                px-2.5 sm:px-3 py-1 text-[10px] sm:text-xs
+                font-black uppercase border-2 border-black dark:border-white
+                -rotate-1"
+              >
                 {p.tag}
               </span>
 
@@ -53,23 +64,29 @@ export function FeaturedProjects() {
                 <img
                   src={p.image}
                   alt={p.title}
-                  className="w-full h-48 object-cover grayscale contrast-[1.25] hover:grayscale-0 transition-all duration-300"
+                  className="w-full h-40 sm:h-48 object-cover grayscale contrast-[1.25] hover:grayscale-0 transition-all duration-300"
                 />
               </div>
 
               {/* Title */}
-              <h3 className="mt-4 text-2xl font-black uppercase">{p.title}</h3>
+              <h3 className="mt-4 text-xl sm:text-2xl font-black uppercase leading-tight">
+                {p.title}
+              </h3>
 
               {/* Description */}
-              <p className="text-sm opacity-80 mt-2">{p.desc}</p>
+              <p className="text-xs sm:text-sm opacity-80 mt-2 leading-relaxed">
+                {p.desc}
+              </p>
 
               {/* CTA */}
               <Link
                 to={p.link}
-                className="inline-block mt-5 border-4 border-black dark:border-white px-4 py-2
-                text-sm font-bold uppercase bg-neutral-100 dark:bg-neutral-900
-                shadow-[4px_4px_0px_0px_black] dark:shadow-[4px_4px_0px_0px_white]
-                rotate-[-1deg] hover:translate-x-[3px] hover:translate-y-[3px] transition-transform"
+                className="inline-block w-full sm:w-auto mt-4 sm:mt-5
+                border-[3px] sm:border-4 border-black dark:border-white
+                px-4 py-2 text-xs sm:text-sm font-bold uppercase
+                bg-neutral-100 dark:bg-neutral-900
+                shadow-[3px_3px_0px_0px_black] dark:shadow-[3px_3px_0px_0px_white]
+                -rotate-1 hover:translate-x-[3px] hover:translate-y-[3px] transition-transform text-center"
               >
                 View Case Study →
               </Link>

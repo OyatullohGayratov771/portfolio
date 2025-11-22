@@ -10,6 +10,9 @@ import Businesses from "./pages/Businesses";
 import Channels from "./pages/Channels";
 import Notes from "./pages/Notes";
 import Contact from "./pages/Contact";
+import TelegramChannel from "./pages/channels/TelegramChannel";
+import YoutubeChannel from "./pages/channels/YoutubeChannel";
+import InstagramChannel from "./pages/channels/InstagramChannel";
 
 export default function App() {
   return (
@@ -24,6 +27,9 @@ export default function App() {
             <Route path="/channels" element={<Channels />} />
             <Route path="/notes" element={<Notes />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/channels/telegram" element={<TelegramChannel />} />
+            <Route path="/channels/youtube" element={<YoutubeChannel />} />
+            <Route path="/channels/instagram" element={<InstagramChannel />} />
           </Routes>
         </main>
         
