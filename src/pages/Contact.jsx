@@ -190,10 +190,32 @@ ${message}`
 
               <div className="space-y-2">
                 <a
-                  href="mailto:youremail@example.com"
+                  href="mailto:azamatgayratov771@gamil.com"
                   className="block underline underline-offset-2 hover:opacity-80 break-all"
                 >
-                  Email: youremail@example.com
+                  Email: azamatgayratov771@gamil.com
+                </a>
+                <a
+                  href="tel:+998901234567"
+                  className="block underline underline-offset-2 hover:opacity-80"
+                > 
+                  Phone: +998333110101
+                </a>
+                <a
+                  href="https://www.instagram.com/x.azamat.x/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="block underline underline-offset-2 hover:opacity-80"
+                >
+                  Instagram: @x.azamat.x 
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/oyatullohgayratov0101/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="block underline underline-offset-2 hover:opacity-80"
+                >
+                  LinkedIn: Oyatulloh Gayratov
                 </a>
                 <a
                   href={`https://t.me/${TELEGRAM_USERNAME}`}
@@ -203,6 +225,29 @@ ${message}`
                 >
                   Telegram: @{TELEGRAM_USERNAME}
                 </a>
+
+                <a
+                  href="https://github.com/OyatullohGayratov771"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="block underline underline-offset-2 hover:opacity-80"
+                >
+                  GitHub: OyatullohGayratov771
+                </a>
+                <a
+                  href="https://www.facebook.com/profile.php?id=100087367497180"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="block underline underline-offset-2 hover:opacity-80"
+                >
+                  Facebook: Oyatulloh Gayratov
+                </a>
+                <a> 
+                  Location: Tashkent, Uzbekistan
+                </a>
+              </div>
+              <div className="mt-4 text-[10px] sm:text-[11px] opacity-70 font-mono">
+                <div>/end-of-direct-lines/</div>
               </div>
             </div>
 

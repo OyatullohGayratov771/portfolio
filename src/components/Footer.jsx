@@ -24,9 +24,9 @@ export default function Footer() {
 
           {/* RIGHT — Links */}
           <div className="flex gap-6 text-sm sm:text-base font-black uppercase tracking-wide">
-            <FooterLink href="https://t.me/yourtelegram">Telegram</FooterLink>
-            <FooterLink href="https://github.com/yourgithub">GitHub</FooterLink>
-            <FooterLink href="mailto:youremail@example.com">Email</FooterLink>
+            <FooterLink href="https://t.me/x_azamat_x">Telegram</FooterLink>
+            <FooterLink href="https://github.com/OyatullohGayratov771">GitHub</FooterLink>
+            <FooterLink href="mailto:azamatgayratov771@gamil.com">Email</FooterLink>
           </div>
         </div>
 

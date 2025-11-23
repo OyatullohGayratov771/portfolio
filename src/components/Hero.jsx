@@ -51,7 +51,7 @@ export default function Hero() {
               leading-[0.9] tracking-tight select-none
               text-[2.35rem] sm:text-[3.15rem] md:text-[4.5rem] lg:text-[5rem]"
             >
-              Azamat
+              Gayratov Oyatulloh
               <br />
               Builds
               <br />
