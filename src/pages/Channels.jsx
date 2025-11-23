@@ -1,26 +1,27 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 export default function Channels() {
   const channels = [
     {
       title: "Telegram — Dev Notes",
       desc: "Quick thoughts, code tips, and creative fragments.",
-      link: "./channels/telegram",
-      image: "/channel1.jpg",
+      link: "/channels/telegram",
+      image: "/project1.jpg",
       code: "TG-01",
     },
     {
       title: "YouTube — Raw Talks",
       desc: "Long-form chaos about design, dev & business.",
-      link: "./channels/youtube",
-      image: "/channel2.jpg",
+      link: "/channels/youtube",
+      image: "/project1.jpg",
       code: "YT-02",
     },
     {
       title: "Instagram — Visual Log",
       desc: "A collage-based archive of my experiments.",
-      link: "./channels/instagram",
-      image: "/channel3.jpg",
+      link: "/channels/instagram",
+      image: "/project1.jpg",
       code: "IG-03",
     },
   ];
@@ -119,19 +120,18 @@ export default function Channels() {
                 >{`[=========  ${ch.code}  =========]`}</pre>
 
                 {/* Button */}
-                <a
-                  href={ch.link}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-block w-full sm:w-auto mt-4 sm:mt-6
-                  px-4 py-2 border-[3px] sm:border-4 border-black dark:border-white
-                  bg-neutral-200 dark:bg-neutral-800 text-black dark:text-white
-                  font-black uppercase text-xs sm:text-sm -rotate-1
-                  shadow-[3px_3px_0px_black] dark:shadow-[3px_3px_0px_white]
-                  hover:translate-x-[3px] hover:translate-y-[3px] transition-transform text-center"
-                >
-                  Visit Channel
-                </a>
+                <Link
+                to={ch.link}
+                className="inline-block w-full sm:w-auto mt-4 sm:mt-6
+                px-4 py-2 border-[3px] sm:border-4 border-black dark:border-white
+                bg-neutral-200 dark:bg-neutral-800 text-black dark:text-white
+                font-black uppercase text-xs sm:text-sm -rotate-1
+                shadow-[3px_3px_0px_black] dark:shadow-[3px_3px_0px_white]
+                hover:translate-x-[3px] hover:translate-y-[3px] transition-transform text-center"
+              >
+                Visit Channel
+              </Link>
+
               </div>
 
               {/* TERMINAL CORNER */}
