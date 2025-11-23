@@ -9,7 +9,7 @@ export default function Navbar() {
     <header 
       className="sticky top-0 z-50 backdrop-blur-md 
       bg-white/70 dark:bg-[#000000]/70 
-      border-b border-neutral-200 dark:border-neutral-800
+      border-b border-neutral-200 dark:border-black
       transition-all duration-300"
     >
       <nav className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
@@ -50,7 +50,7 @@ export default function Navbar() {
       <div
         className={`md:hidden overflow-hidden transition-all duration-300 
         ${open ? "max-h-96" : "max-h-0"}
-        bg-white dark:bg-[#0F0F0F] border-t border-neutral-200 dark:border-neutral-800`}
+        bg-white dark:bg-[#0F0F0F] border-t border-neutral-200 dark:border-black`}
       >
         <div className="flex flex-col p-6 gap-4 text-sm">
           <NavItemMobile setOpen={setOpen} to="/">Home</NavItemMobile>
@@ -86,7 +86,7 @@ function NavItemMobile({ to, children, setOpen }) {
     <Link
       to={to}
       onClick={() => setOpen(false)}
-      className="text-neutral-700 dark:text-neutral-300 
+      className="text-black dark:text-neutral-300 
       hover:text-black [data-mode=dark]:hover:text-white 
       transition-colors"
     >
