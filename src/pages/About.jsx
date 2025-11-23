@@ -85,12 +85,12 @@ export default function About() {
             initial={{ opacity: 0, scale: 0.93 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
-            className="col-span-12 md:col-span-5 relative rotate-[2deg]"
+            className="col-span-12 md:col-span-5 relative rotate-2"
           >
             {/* Torn paper (reduced on mobile) */}
             <img
               src="/torn-paper-small.png"
-              className="absolute -top-3 -left-3 w-[110%] opacity-40 rotate-[3deg] pointer-events-none hidden sm:block"
+              className="absolute -top-3 -left-3 w-[110%] opacity-40 rotate-3 pointer-events-none hidden sm:block"
               aria-hidden="true"
             />
 

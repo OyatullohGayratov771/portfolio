@@ -106,7 +106,7 @@ export default function TelegramChannel() {
               rel="noreferrer"
               className="px-5 py-2 border-4 border-black dark:border-white bg-neutral-200 dark:bg-neutral-800
               text-black dark:text-white font-black uppercase text-xs sm:text-sm
-              shadow-[4px_4px_0px_black] dark:shadow-[4px_4px_0px_white] rotate-[-1deg]
+              shadow-[4px_4px_0px_black] dark:shadow-[4px_4px_0px_white] rotate-1
               hover:translate-x-[3px] hover:translate-y-[3px] transition-transform"
             >
               Open Telegram
