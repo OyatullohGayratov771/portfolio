@@ -58,17 +58,13 @@ export default function About() {
               <div className="absolute inset-0 bg-[url('/noise.png')] opacity-15 mix-blend-soft-light pointer-events-none" />
 
               <p className="font-semibold text-base sm:text-lg leading-relaxed">
-                Men Azamat. Kod yozaman, dizayn qilaman, fikrlayman.
-                Steril, ortiqcha tekis UIlar menga mos emas. Menga qirra, kollaj, rotation, tartibli tartibsizlik yoqadi.
+                Men Azamat. Backend dasturchiman. Asosan Golang bilan ishlayman.
+                Murakkab tizimlarni sokin va tushunarli holga keltirishni yoqtiraman.
               </p>
 
               <p className="mt-4 font-semibold text-base sm:text-lg leading-relaxed">
-                UI menga ko‘proq zine — qo‘lda yasalgan, nuqsonli, tirik ko‘rinishi bilan yoqadi.
-                Texture, yirtilgan qog‘oz, noise — bu mening energiyam.
-              </p>
-
-              <p className="mt-4 font-semibold text-base sm:text-lg leading-relaxed">
-                Hozir “Azamat Universe” deb nomlangan shaxsiy vizual tizimni qurayapman.
+                Frontend — bu men uchun bezak emas, bu fikrni uzatish vositasi.
+                Shuning uchun dizaynim baʼzan qo‘pol, baʼzan notekis — lekin har doim tirik.
               </p>
 
               {/* Tape */}
@@ -82,9 +78,10 @@ export default function About() {
 
           {/* Portrait */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.93 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6 }}
+            initial={{ opacity: 0, y: 40, rotate: -2 }}
+            whileInView={{ opacity: 1, y: 0, rotate: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
             className="col-span-12 md:col-span-5 relative rotate-2"
           >
             {/* Torn paper (reduced on mobile) */}
