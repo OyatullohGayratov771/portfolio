@@ -1,94 +1,122 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import ThemeSwitch from "./ThemeSwitch";
+
+const NAV_LINKS = [
+  { to: "/", label: "Home" },
+  { to: "/about", label: "About" },
+  { to: "/projects", label: "Projects" },
+  { to: "/businesses", label: "Businesses" },
+  { to: "/channels", label: "Channels" },
+  { to: "/notes", label: "Notes" },
+  { to: "/contact", label: "Contact" },
+];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const location = useLocation();
 
   return (
-    <header 
-      className="sticky top-0 z-50 backdrop-blur-md 
-      bg-white/70 dark:bg-[#000000]/70 
-      border-b border-neutral-200 dark:border-black
+    <header
+      className="sticky top-0 z-50 backdrop-blur-md
+      bg-white/80 dark:bg-black/80
+      border-b-2 border-black dark:border-white
       transition-all duration-300"
     >
       <nav className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-        
+
         {/* Logo */}
-        <Link 
-          to="/" 
-          className="font-semibold text-lg tracking-tight hover:opacity-70 transition"
+        <Link
+          to="/"
+          className="font-black text-base uppercase tracking-tight hover:opacity-70 transition"
         >
-          gayratov oyatulloh
+          gayratov<span className="text-red-600">.</span>
         </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex gap-6 text-sm">
-          <NavItem to="/">Home</NavItem>
-          <NavItem to="/about">About</NavItem>
-          <NavItem to="/projects">Projects</NavItem>
-          <NavItem to="/businesses">Businesses</NavItem>
-          <NavItem to="/channels">Channels</NavItem>
-          <NavItem to="/notes">Notes</NavItem>
-          <NavItem to="/contact">Contact</NavItem>
+        <div className="hidden md:flex gap-6 text-xs font-bold uppercase tracking-wide">
+          {NAV_LINKS.map(({ to, label }) => (
+            <NavItem key={to} to={to} active={location.pathname === to}>
+              {label}
+            </NavItem>
+          ))}
         </div>
 
         {/* Right: Theme + Mobile toggle */}
         <div className="flex items-center gap-3">
           <ThemeSwitch />
           <button
-            className="md:hidden border border-neutral-300 dark:border-neutral-700 
-            p-2 rounded-md text-lg"
+            aria-label={open ? "Close menu" : "Open menu"}
+            className="md:hidden w-9 h-9 flex flex-col items-center justify-center gap-1.5
+            border-2 border-black dark:border-white
+            bg-neutral-100 dark:bg-neutral-900
+            hover:bg-neutral-200 dark:hover:bg-neutral-800 transition"
             onClick={() => setOpen(!open)}
           >
-            ☰
+            <span
+              className={`block h-0.5 w-5 bg-black dark:bg-white transition-all duration-200 origin-center
+              ${open ? "rotate-45 translate-y-2" : ""}`}
+            />
+            <span
+              className={`block h-0.5 w-5 bg-black dark:bg-white transition-all duration-200
+              ${open ? "opacity-0" : ""}`}
+            />
+            <span
+              className={`block h-0.5 w-5 bg-black dark:bg-white transition-all duration-200 origin-center
+              ${open ? "-rotate-45 -translate-y-2" : ""}`}
+            />
           </button>
         </div>
       </nav>
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden overflow-hidden transition-all duration-300 
+        className={`md:hidden overflow-hidden transition-all duration-300
         ${open ? "max-h-96" : "max-h-0"}
-        bg-white dark:bg-[#0F0F0F] border-t border-neutral-200 dark:border-black`}
+        bg-white dark:bg-black border-t-2 border-black dark:border-white`}
       >
-        <div className="flex flex-col p-6 gap-4 text-sm">
-          <NavItemMobile setOpen={setOpen} to="/">Home</NavItemMobile>
-          <NavItemMobile setOpen={setOpen} to="/about">About</NavItemMobile>
-          <NavItemMobile setOpen={setOpen} to="/projects">Projects</NavItemMobile>
-          <NavItemMobile setOpen={setOpen} to="/businesses">Businesses</NavItemMobile>
-          <NavItemMobile setOpen={setOpen} to="/channels">Channels</NavItemMobile>
-          <NavItemMobile setOpen={setOpen} to="/notes">Notes</NavItemMobile>
-          <NavItemMobile setOpen={setOpen} to="/contact">Contact</NavItemMobile>
+        <div className="flex flex-col p-6 gap-1">
+          {NAV_LINKS.map(({ to, label }) => (
+            <NavItemMobile
+              key={to}
+              setOpen={setOpen}
+              to={to}
+              active={location.pathname === to}
+            >
+              {label}
+            </NavItemMobile>
+          ))}
         </div>
       </div>
     </header>
   );
 }
 
-/* Desktop Nav Item Component */
-function NavItem({ to, children }) {
+function NavItem({ to, children, active }) {
   return (
     <Link
       to={to}
-      className="text-neutral-600 dark:text-neutral-300 
-      hover:text-neutral-900 [data-mode=dark]:hover:text-white 
-      transition-colors"
+      className={`relative transition-colors pb-0.5
+        ${active
+          ? "text-black dark:text-white after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-red-600"
+          : "text-neutral-500 dark:text-neutral-400 hover:text-black dark:hover:text-white"
+        }`}
     >
       {children}
     </Link>
   );
 }
 
-/* Mobile Nav Item Component */
-function NavItemMobile({ to, children, setOpen }) {
+function NavItemMobile({ to, children, setOpen, active }) {
   return (
     <Link
       to={to}
       onClick={() => setOpen(false)}
-      className="text-black dark:text-neutral-300 
-      hover:text-black [data-mode=dark]:hover:text-white 
-      transition-colors"
+      className={`py-2 px-3 font-black uppercase text-sm transition-colors
+        ${active
+          ? "bg-black text-white dark:bg-white dark:text-black"
+          : "text-black dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-900"
+        }`}
     >
       {children}
     </Link>

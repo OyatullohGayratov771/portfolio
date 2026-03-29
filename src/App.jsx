@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
 
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -15,9 +16,10 @@ import InstagramChannel from "./pages/channels/InstagramChannel";
 
 export default function App() {
   return (
-      <div className="min-h-screen bg-base-light text-text-primary dark:bg-[#000000] dark:text-neutral-100 transition-colors duration-300">
+      <div className="min-h-screen bg-neutral-100 dark:bg-black text-black dark:text-neutral-100 transition-colors duration-300">
+        <ScrollToTop />
         <Navbar />
-        <main className="max-w-6xl mx-auto px-6 py-12">
+        <main className="max-w-6xl mx-auto px-6">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />

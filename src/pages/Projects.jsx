@@ -65,10 +65,8 @@ export default function Projects() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: i * 0.15 }}
-              style={{
-                rotate: window.innerWidth < 640 ? "0deg" : p.rotate,
-              }}
               className="col-span-12 sm:col-span-6 lg:col-span-4 relative"
+              style={{ rotate: p.rotate }}
             >
 
               {/* Torn background strip */}

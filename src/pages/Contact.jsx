@@ -190,15 +190,15 @@ ${message}`
 
               <div className="space-y-2">
                 <a
-                  href="mailto:azamatgayratov771@gamil.com"
+                  href="mailto:azamatgayratov771@gmail.com"
                   className="block underline underline-offset-2 hover:opacity-80 break-all"
                 >
-                  Email: azamatgayratov771@gamil.com
+                  Email: azamatgayratov771@gmail.com
                 </a>
                 <a
-                  href="tel:+998901234567"
+                  href="tel:+998333110101"
                   className="block underline underline-offset-2 hover:opacity-80"
-                > 
+                >
                   Phone: +998333110101
                 </a>
                 <a
@@ -242,9 +242,9 @@ ${message}`
                 >
                   Facebook: Oyatulloh Gayratov
                 </a>
-                <a> 
+                <span className="block opacity-80">
                   Location: Tashkent, Uzbekistan
-                </a>
+                </span>
               </div>
               <div className="mt-4 text-[10px] sm:text-[11px] opacity-70 font-mono">
                 <div>/end-of-direct-lines/</div>
